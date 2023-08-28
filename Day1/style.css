@@ -16,7 +16,7 @@ body {
 
 .container {
     display: flex;
-    width: 90vw;
+    width: 50vw;
 }
 
 .panel {
@@ -24,5 +24,40 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 80vh;
-    
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
 }
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 2;
+}
+
+.panel.active h3 {
+    opacity: 1;
+}
+
+@media(max-width: 520px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+    
+} 
