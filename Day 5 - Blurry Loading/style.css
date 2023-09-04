@@ -20,10 +20,10 @@ body {
     background-size: cover;
     background-position: center;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: -40px;
+    left: -40px;
+    width: calc(100vw + 80px);
+    height: calc(100vh + 80px);
     z-index: -1;
     filter: blur(0px);
 }
