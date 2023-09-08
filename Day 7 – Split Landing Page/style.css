@@ -4,8 +4,10 @@
     --left-bg-color: rgba(43, 43, 43, 0.7 );
     --right-bg-color: rgba(125, 88, 49, 0.7);
     --left-btn-hover-color: rgb(144, 189, 51);
-    --right-btn-hover-color: rgb(227, 184, 84);
-    
+    --right-btn-hover-color: #bf5700;
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 0.5s;     
 }
 
 * {
@@ -80,6 +82,13 @@ h1 {
     background-position: center;
 }
 
+.split.right, 
+.split.left, 
+.split.right::before, 
+.split.left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
 .split.left::before {
     content: '';
     position: absolute;
@@ -102,4 +111,32 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
 }
